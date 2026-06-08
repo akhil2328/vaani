@@ -3,7 +3,7 @@ import axios from "axios";
 import { io } from "socket.io-client";
 
 import CrisisMap from "../components/CrisisMap";
-import { BACKEND } from "./config";
+import { BACKEND } from "../config";
 
 export default function MapPage() {
 

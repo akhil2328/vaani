@@ -3,6 +3,7 @@ import axios from "axios";
 import { io } from "socket.io-client";
 
 import CrisisMap from "../components/CrisisMap";
+import { BACKEND } from "./config";
 
 export default function MapPage() {
 
@@ -15,7 +16,7 @@ export default function MapPage() {
     fetchData();
 
     const socket =
-      io("http://localhost:5000");
+      io(BACKEND);
 
     socket.on(
       "new_crisis",
@@ -39,7 +40,7 @@ export default function MapPage() {
 
       const res =
         await axios.get(
-          "http://localhost:5000/api/crisis"
+          `${BACKEND}/api/crisis`
         );
 
       setData(res.data);

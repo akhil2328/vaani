@@ -36,7 +36,7 @@ export default function VoicePage() {
     recognition.stop();
     setListening(false);
 
-    await axios.post("http://localhost:5000/api/voice", {
+    await axios.post(`${BACKEND}/api/voice`, {
       text,
     });
   };
